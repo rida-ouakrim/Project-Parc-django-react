@@ -72,6 +72,14 @@
   color: var(--danger-color);
 }
 
+.quick-edit-box {
+  margin-top: 12px;
+  padding: 12px;
+  background: var(--surface-hover);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+}
+
 /* Inputs globaux du panel */
 .spot-panel input,
 .spot-panel select {
