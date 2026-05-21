@@ -17,8 +17,8 @@ export default function LoginPage() {
     <div className="login-page">
       <div className="login-card">
         <div className="login-header">
-          <div className="login-icon">🚗</div>
-          <h1>EcoMan Parking</h1>
+          <img src="/logo.png" alt="Sefamar Logo" className="login-logo-img" />
+          <h1>Parking Sefamar</h1>
           <p>Gestion Digitalisée des Parcs</p>
         </div>
 
@@ -66,7 +66,7 @@ export default function LoginPage() {
         </form>
 
         <div className="login-footer">
-          <p>© 2026 EcoMan Parking — Tous droits réservés</p>
+          <p>© 2026 Parking Sefamar — Tous droits réservés</p>
         </div>
       </div>
     </div>

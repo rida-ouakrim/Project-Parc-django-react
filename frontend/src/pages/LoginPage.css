@@ -23,15 +23,17 @@
   margin-bottom: 36px;
 }
 
-.login-icon {
-  font-size: 48px;
-  margin-bottom: 12px;
-  animation: bounce 2s ease-in-out infinite;
+.login-logo-img {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 16px;
+  animation: fade-in-up 0.8s ease-out;
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .login-header h1 {

@@ -17,8 +17,8 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-brand" onClick={() => navigate('/parking')}>
-        <span className="navbar-logo">🚗</span>
-        <span className="navbar-title">EcoMan Parking</span>
+        <img src="/logo.png" alt="Logo Sefamar" className="navbar-logo-img" />
+        <span className="navbar-title">Parking Sefamar</span>
       </div>
 
       <div className="navbar-links">
