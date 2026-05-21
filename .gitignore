@@ -1,0 +1,21 @@
+# Environnements Python
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+db.sqlite3
+parking\ \(3\).db
+
+# Dossiers React / Node
+frontend/node_modules/
+frontend/dist/
+frontend/.npm/
+
+# IDE et OS
+.vscode/
+.idea/
+.DS_Store
+*.log
