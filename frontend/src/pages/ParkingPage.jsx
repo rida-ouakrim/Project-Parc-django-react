@@ -113,11 +113,7 @@ export default function ParkingPage() {
           </label>
         </div>
 
-        {currentPark !== 'ECOMAIL' && (
-          <div className="park-notice">
-            ℹ️ Design provisoire en attente d'architecture.
-          </div>
-        )}
+
       </aside>
 
       {/* Carte SVG */}
