@@ -106,6 +106,15 @@ export default function SpotPanel({
       setTransferMsg(`✅ ${res.data.message}`);
       setTransferChassis('');
       setTransferSpotId('');
+      // Recharger les places libres du parc sélectionné pour éviter les doublons
+      if (transferPark) {
+        try {
+          const updated = await api.get(`parks/${transferPark}/free-spots/`);
+          setFreeSpots(updated.data);
+        } catch {
+          setFreeSpots([]);
+        }
+      }
       onSpotUpdated();
     } catch (err) {
       setTransferMsg(`❌ ${err.response?.data?.error || 'Erreur'}`);
