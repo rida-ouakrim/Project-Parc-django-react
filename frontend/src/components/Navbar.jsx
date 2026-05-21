@@ -1,9 +1,11 @@
 import { useAuth } from '../context/AuthContext';
+import { useTheme } from '../context/ThemeContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 export default function Navbar() {
   const { user, logout, isAdmin } = useAuth();
+  const { theme, setTheme } = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -38,6 +40,14 @@ export default function Navbar() {
       </div>
 
       <div className="navbar-user">
+        <div className="theme-toggle">
+          <select value={theme} onChange={(e) => setTheme(e.target.value)} className="theme-select">
+            <option value="system">💻 Système</option>
+            <option value="dark">🌙 Sombre</option>
+            <option value="light">☀️ Clair</option>
+          </select>
+        </div>
+
         <span className="user-badge">
           👤 {user?.username}
           <span className={`role-badge ${user?.role}`}>

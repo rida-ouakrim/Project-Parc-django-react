@@ -129,23 +129,23 @@ export default function ParkMap({ spots, parkName, onSpotClick, highlightedSpot,
     return (
       <>
         {/* Cadre extérieur */}
-        <rect x="-45" y="-45" width="1435" height="1463" fill="none" stroke="#334155" strokeWidth="4" />
+        <rect x="-45" y="-45" width="1435" height="1463" fill="none" stroke="var(--text-muted)" strokeWidth="4" />
 
         {/* Routes bleues */}
-        <rect x="-45" y="-45" width="1435" height="65" fill="rgba(96,165,250,0.15)" stroke="rgba(96,165,250,0.3)" strokeWidth="1" />
-        <rect x="-45" y="-45" width="65" height="1463" fill="rgba(96,165,250,0.15)" stroke="rgba(96,165,250,0.3)" strokeWidth="1" />
-        <rect x="20" y="1255" width="630" height="63" fill="rgba(96,165,250,0.15)" />
-        <rect x="650" y="1180" width="740" height="138" fill="rgba(96,165,250,0.15)" stroke="#334155" strokeWidth="2" />
+        <rect x="-45" y="-45" width="1435" height="65" fill="var(--primary-bg)" stroke="var(--primary-border)" strokeWidth="1" />
+        <rect x="-45" y="-45" width="65" height="1463" fill="var(--primary-bg)" stroke="var(--primary-border)" strokeWidth="1" />
+        <rect x="20" y="1255" width="630" height="63" fill="var(--primary-bg)" />
+        <rect x="650" y="1180" width="740" height="138" fill="var(--primary-bg)" stroke="var(--text-muted)" strokeWidth="2" />
 
         {/* Entrées */}
         <rect x="665" y="1160" width="160" height="40" fill="rgba(251,146,60,0.2)" stroke="rgba(251,146,60,0.5)" strokeWidth="2" rx="4" />
-        <text x="745" y="1185" fill="#fb923c" fontSize="16" fontFamily="Inter, sans-serif" fontWeight="600" textAnchor="middle">Entrée 2</text>
+        <text x="745" y="1185" fill="var(--warning-color)" fontSize="16" fontFamily="Inter, sans-serif" fontWeight="600" textAnchor="middle">Entrée 2</text>
 
         <rect x="1390" y="-45" width="40" height="65" fill="rgba(251,146,60,0.2)" stroke="rgba(251,146,60,0.5)" strokeWidth="2" rx="4" />
-        <text x="1415" y="-12" fill="#fb923c" fontSize="12" fontFamily="Inter, sans-serif" fontWeight="600" textAnchor="middle" transform="rotate(90 1415 -12)">Entrée 1</text>
+        <text x="1415" y="-12" fill="var(--warning-color)" fontSize="12" fontFamily="Inter, sans-serif" fontWeight="600" textAnchor="middle" transform="rotate(90 1415 -12)">Entrée 1</text>
 
         <rect x="1390" y="1180" width="40" height="240" fill="rgba(251,146,60,0.2)" stroke="rgba(251,146,60,0.5)" strokeWidth="2" rx="4" />
-        <text x="1415" y="1300" fill="#fb923c" fontSize="16" fontFamily="Inter, sans-serif" fontWeight="600" textAnchor="middle" transform="rotate(90 1415 1300)">Entrée 3</text>
+        <text x="1415" y="1300" fill="var(--warning-color)" fontSize="16" fontFamily="Inter, sans-serif" fontWeight="600" textAnchor="middle" transform="rotate(90 1415 1300)">Entrée 3</text>
 
         {/* Zone Camions Militaire */}
         <rect x="20" y="120" width="192" height="1060" fill="rgba(161,140,90,0.15)" stroke="rgba(161,140,90,0.4)" strokeWidth="2" rx="4" />
@@ -158,28 +158,28 @@ export default function ParkMap({ spots, parkName, onSpotClick, highlightedSpot,
         <text x="185" y="1225" fill="rgba(161,140,90,0.8)" fontSize="12" fontFamily="Inter, sans-serif" fontWeight="600" textAnchor="middle">CAMIONS MILITAIRE</text>
 
         {/* Mur séparation */}
-        <line x1="980" y1="20" x2="980" y2="1180" stroke="#475569" strokeWidth="4" />
-        <line x1="1130" y1="20" x2="1250" y2="20" stroke="#475569" strokeWidth="4" />
+        <line x1="980" y1="20" x2="980" y2="1180" stroke="var(--text-muted)" strokeWidth="4" />
+        <line x1="1130" y1="20" x2="1250" y2="20" stroke="var(--text-muted)" strokeWidth="4" />
       </>
     );
   };
 
   const getSpotColor = (spot) => {
     const isHighlighted = highlightedSpot === spot.code;
-    if (isHighlighted) return '#f59e0b';
+    if (isHighlighted) return 'var(--warning-color)';
 
     if (spot.status === 'libre') {
-      if (spot.code.startsWith('Auto')) return 'rgba(100,116,139,0.6)';
-      if (spot.code.startsWith('Prv')) return 'rgba(245,158,11,0.6)';
-      return 'rgba(34,197,94,0.5)';
+      if (spot.code.startsWith('Auto')) return 'rgba(100,116,139,0.5)';
+      if (spot.code.startsWith('Prv')) return 'rgba(245,158,11,0.5)';
+      return 'var(--success-bg)';
     }
-    return 'rgba(239,68,68,0.6)';
+    return 'var(--danger-bg)';
   };
 
   const getSpotStroke = (spot) => {
-    if (highlightedSpot === spot.code) return '#fbbf24';
-    if (spot.status === 'libre') return 'rgba(34,197,94,0.4)';
-    return 'rgba(239,68,68,0.4)';
+    if (highlightedSpot === spot.code) return 'var(--warning-color)';
+    if (spot.status === 'libre') return 'var(--success-color)';
+    return 'var(--danger-color)';
   };
 
   return (
@@ -224,14 +224,14 @@ export default function ParkMap({ spots, parkName, onSpotClick, highlightedSpot,
           onMouseDown={handleMouseDown}
         >
           {/* Background */}
-          <rect x="-200" y="-200" width="2000" height="2000" fill="#0f172a" />
+          <rect x="-200" y="-200" width="2000" height="2000" fill="var(--bg-color)" />
 
           {/* Static elements (ECOMAIL) */}
           {renderEcomailStatic()}
 
           {/* Cadre générique pour les autres parcs */}
           {parkName !== 'ECOMAIL' && (
-            <rect x="20" y="20" width="940" height="1120" fill="none" stroke="#334155" strokeWidth="4" rx="8" />
+            <rect x="20" y="20" width="940" height="1120" fill="none" stroke="var(--text-muted)" strokeWidth="4" rx="8" />
           )}
 
           {/* Spots */}
@@ -264,7 +264,7 @@ export default function ParkMap({ spots, parkName, onSpotClick, highlightedSpot,
                 <text
                   x={spot.x + spot.w / 2}
                   y={spot.y + spot.h / 2 + 4}
-                  fill={isFiltered ? 'rgba(226,232,240,0.15)' : '#e2e8f0'}
+                  fill={isFiltered ? 'var(--border-light)' : 'var(--text-primary)'}
                   fontSize={showChassis && spot.chassis ? '8' : '11'}
                   fontFamily="Inter, sans-serif"
                   fontWeight="600"

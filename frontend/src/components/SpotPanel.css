@@ -4,14 +4,14 @@
   gap: 0;
   height: 100%;
   overflow-y: auto;
-  background: rgba(15, 23, 42, 0.6);
+  background: var(--surface-color);
   border-radius: 16px;
-  border: 1px solid rgba(148, 163, 184, 0.1);
+  border: 1px solid var(--border-light);
 }
 
 .panel-section {
   padding: 20px;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .panel-section:last-child {
@@ -19,7 +19,7 @@
 }
 
 .panel-section h3 {
-  color: #f1f5f9;
+  color: var(--text-bright);
   font-size: 15px;
   font-weight: 600;
   margin: 0 0 14px 0;
@@ -36,7 +36,7 @@
 }
 
 .search-row button {
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-text));
   border: none;
   color: white;
   padding: 10px 16px;
@@ -50,7 +50,7 @@
 
 .search-row button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 15px var(--primary-bg);
 }
 
 .search-result {
@@ -61,26 +61,26 @@
 }
 
 .search-result.found {
-  background: rgba(34, 197, 94, 0.1);
-  border: 1px solid rgba(34, 197, 94, 0.2);
-  color: #86efac;
+  background: var(--success-bg);
+  border: 1px solid var(--success-border);
+  color: var(--success-color);
 }
 
 .search-result.not-found {
-  background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.2);
-  color: #fca5a5;
+  background: var(--danger-bg);
+  border: 1px solid var(--danger-border);
+  color: var(--danger-color);
 }
 
 /* Inputs globaux du panel */
 .spot-panel input,
 .spot-panel select {
   width: 100%;
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px solid rgba(148, 163, 184, 0.15);
+  background: var(--surface-hover);
+  border: 1px solid var(--border-light);
   border-radius: 10px;
   padding: 10px 14px;
-  color: #f1f5f9;
+  color: var(--text-bright);
   font-size: 13px;
   outline: none;
   transition: border-color 0.2s;
@@ -90,7 +90,7 @@
 
 .spot-panel input:focus,
 .spot-panel select:focus {
-  border-color: #3b82f6;
+  border-color: var(--primary-color);
 }
 
 .spot-panel select {
@@ -98,8 +98,8 @@
 }
 
 .spot-panel select option {
-  background: #1e293b;
-  color: #f1f5f9;
+  background: var(--bg-color);
+  color: var(--text-bright);
 }
 
 /* Spot detail */
@@ -109,14 +109,14 @@
   justify-content: space-between;
   margin-bottom: 14px;
   padding: 12px;
-  background: rgba(30, 41, 59, 0.5);
+  background: var(--surface-light);
   border-radius: 10px;
 }
 
 .spot-code {
   font-size: 20px;
   font-weight: 700;
-  color: #f1f5f9;
+  color: var(--text-bright);
 }
 
 .spot-status {
@@ -127,13 +127,13 @@
 }
 
 .spot-status.free {
-  background: rgba(34, 197, 94, 0.15);
-  color: #86efac;
+  background: var(--success-bg);
+  color: var(--success-color);
 }
 
 .spot-status.occupied {
-  background: rgba(239, 68, 68, 0.15);
-  color: #fca5a5;
+  background: var(--danger-bg);
+  color: var(--danger-color);
 }
 
 .assign-form, .release-form {
@@ -143,19 +143,19 @@
 }
 
 .chassis-display {
-  color: #94a3b8;
+  color: var(--text-secondary);
   font-size: 14px;
   margin: 0;
 }
 
 .chassis-display strong {
-  color: #f1f5f9;
+  color: var(--text-bright);
   font-family: monospace;
   font-size: 16px;
 }
 
 .btn-assign {
-  background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+  background: var(--success-color) !important;
   border: none !important;
   color: white;
   padding: 12px !important;
@@ -168,11 +168,11 @@
 
 .btn-assign:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+  box-shadow: 0 4px 15px var(--success-bg);
 }
 
 .btn-release {
-  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+  background: var(--danger-color) !important;
   border: none !important;
   color: white;
   padding: 12px !important;
@@ -186,11 +186,11 @@
 
 .btn-release:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+  box-shadow: 0 4px 15px var(--danger-bg);
 }
 
 .btn-transfer {
-  background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+  background: var(--primary-color) !important;
   border: none !important;
   color: white;
   padding: 12px !important;
@@ -204,11 +204,11 @@
 
 .btn-transfer:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+  box-shadow: 0 4px 15px var(--primary-bg);
 }
 
 .no-spot-selected {
-  color: #475569;
+  color: var(--text-muted);
   font-size: 13px;
   font-style: italic;
   text-align: center;
@@ -225,13 +225,13 @@
 }
 
 .action-msg.success {
-  background: rgba(34, 197, 94, 0.1);
-  border: 1px solid rgba(34, 197, 94, 0.2);
-  color: #86efac;
+  background: var(--success-bg);
+  border: 1px solid var(--success-border);
+  color: var(--success-color);
 }
 
 .action-msg.error {
-  background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.2);
-  color: #fca5a5;
+  background: var(--danger-bg);
+  border: 1px solid var(--danger-border);
+  color: var(--danger-color);
 }
